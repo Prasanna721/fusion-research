@@ -1,133 +1,71 @@
-# Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
+# 🔬 Deep Fusion Research
 
-<div align="center">
-  <h2>🔋 ts-nextjs-tailwind-starter</h2>
-  <p>Next.js + Tailwind CSS + TypeScript starter packed with useful development features.</p>
-  <p>Made by <a href="https://theodorusclarence.com">Theodorus Clarence</a></p>
+*AI‑powered workflow for turning existing literature into **new, cross‑domain insights**.*
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/theodorusclarence/ts-nextjs-tailwind-starter)](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/stargazers)
-[![Depfu](https://badges.depfu.com/badges/fc6e730632ab9dacaf7df478a08684a7/overview.svg)](https://depfu.com/github/theodorusclarence/ts-nextjs-tailwind-starter?project_id=30160)
-[![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
+DeepFusion - <a href="https://github.com/user-attachments/assets/7be1d37d-8fd6-4ba0-89c3-2fdb4b5ca935/clip_2025-06-26_13-15-47.mp4" target="_blank" rel="noopener noreferrer">▶︎ Watch the demo</a>
 
-</div>
+---
 
-## Features
 
-This repository is 🔋 battery packed with:
+## ✨ What it does
 
-- ⚡️ Next.js 14 with App Router
-- ⚛️ React 18
-- ✨ TypeScript
-- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
-- 💎 Pre-built Components — Components that will **automatically adapt** with your brand color, [check here for the demo](https://tsnext-tw.thcl.dev/components)
-- 🃏 Jest — Configured for unit testing
-- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
-- 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
-- 💖 Prettier — Format your code consistently
-- 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
-- 🤖 Conventional Commit Lint — Make sure you & your teammates follow conventional commit
-- ⏰ Release Please — Generate your changelog by activating the `release-please` workflow
-- 👷 Github Actions — Lint your code on PR
-- 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
-- 🔥 Snippets — A collection of useful snippets
-- 👀 Open Graph Helper Function — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
-- 🗺 Site Map — Automatically generate sitemap.xml
-- 📦 Expansion Pack — Easily install common libraries, additional components, and configs.
+1. **Ingest any paper / URL** – PDFs are parsed with Mistral; web articles with Firecrawl.
+2. **Generate a structured research plan** with LangGraph state machines & LLMs.
+3. **Realtime SSE stream** shows every reasoning step as the graph executes.
+4. **User‑selected Focus items** (notes, key findings, new hypotheses) are merged back into the agent context.
+5. **Fusion phase** re‑runs the graph to produce a "next‑step" report – undiscovered angles, converging domains, or follow‑up experiments.
 
-See the 👉 [feature details and changelog](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/blob/main/CHANGELOG.md) 👈 for more.
+---
 
-You can also check all of the **details and demos** on my blog post:
-
-- [One-stop Starter to Maximize Efficiency on Next.js & Tailwind CSS Projects](https://theodorusclarence.com/blog/one-stop-starter)
-
-## Getting Started
-
-### 1. Clone this template using one of the three ways
-
-1. Use this repository as template
-
-   **Disclosure:** by using this repository as a template, there will be an attribution on your repository.
-
-   I'll appreciate if you do, so this template can be known by others too 😄
-
-   ![Use as template](https://user-images.githubusercontent.com/55318172/129183039-1a61e68d-dd90-4548-9489-7b3ccbb35810.png)
-
-2. Using `create-next-app`
-
-   ```bash
-   pnpm create next-app  -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter ts-pnpm
-   ```
-
-   If you still want to use **pages directory** (_is not actively maintained_) you can use this command
-
-   ```bash
-   npx create-next-app -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/tree/pages-directory project-name
-   ```
-
-3. Using `degit`
-
-   ```bash
-   npx degit theodorusclarence/ts-nextjs-tailwind-starter YOUR_APP_NAME
-   ```
-
-4. Deploy to Vercel
-
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter)
-
-### 2. Install dependencies
-
-It is encouraged to use **pnpm** so the husky hooks can work properly.
+## 🚀 Quick start
 
 ```bash
-pnpm install
+pnpm i
+
+cp .env.example .env.local && $EDITOR .env.local
+
+pnpm dev  # ➜ http://localhost:3000
 ```
 
-### 3. Run the development server
-
-You can start the server using this command:
+<details>
+<summary>Minimal prod build</summary>
 
 ```bash
-pnpm dev
+pnpm build && pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
+</details>
 
-### 4. Change defaults
+### Required env vars
 
-There are some things you need to change including title, urls, favicons, etc.
+| Key                                      | Used for                              |
+| ---------------------------------------- | ------------------------------------- |
+| `OPENAI_API_KEY`                         | Chat completions (planning & writing) |
+| `LANGSMITH_API_KEY`                      | LangSmith traces (optional)           |
+| `LANGSMITH_PROJECT`                      | Project name in LangSmith             |
+| `PERPLEXITY_API_KEY` or `TAVILY_API_KEY` | Web search                            |
+| `FIRECRAWL_API_KEY`                      | Article scraping                      |
+| `MISTRAL_API_KEY`                        | PDF extraction                        |
 
-Find all comments with !STARTERCONF, then follow the guide.
+---
 
-Don't forget to change the package name in package.json
+## 🏗️ Tech stack
 
-### 5. Commit Message Convention
+* **Next.js 14 / React 18** – App router, Server Actions, Tailwind CSS
+* **LangGraph + LangChain** – Deterministic state machine orchestration
+* **SSE** for live step streaming
+* **Zustand** & **shadcn/ui** for UX
 
-This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
+---
 
-## Projects using ts-nextjs-tailwind-starter
+## 🛣 Roadmap
 
-<!--
-TEMPLATE
-- [sitename](https://sitelink.com) ([Source](https://github.com/githublink))
-- [sitename](https://sitelink.com)
--->
+* [ ] Vector store & RAG for very large corpora
+* [ ] Collaborative cursors & comments
+* [ ] 1‑click export → Notion / Markdown / PDF
 
-- [theodorusclarence.com](https://theodorusclarence.com) ([Source](https://github.com/theodorusclarence/theodorusclarence.com))
-- [Notiolink](https://notiolink.thcl.dev/) ([Source](https://github.com/theodorusclarence/notiolink))
-- [NextJs + Materia UI + Typescript](https://github.com/AlexStack/nextjs-materia-mui-typescript-hook-form-scaffold-boilerplate-starter)
+---
 
-Are you using this starter? Please add your page (and repo) to the end of the list via a [Pull Request](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/edit/main/README.md). 😃
+## 📄 License
 
-## Expansion Pack 📦
-
-This starter is now equipped with an [expansion pack](https://github.com/theodorusclarence/expansion-pack).
-
-You can easily add expansion such as React Hook Form + Components, Storybook, and more just using a single command line.
-
-<https://user-images.githubusercontent.com/55318172/146631994-e1cac137-1664-4cfe-950b-a96decc1eaa6.mp4>
-
-Check out the [expansion pack repository](https://github.com/theodorusclarence/expansion-pack) for the commands
-
-### App Router Update
-
-Due to App Router update, the expansion pack is currently **outdated**. It will be updated in the future. You can still use them by copy and pasting the files.
+MIT © 2025 Prasanna A P
