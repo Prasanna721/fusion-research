@@ -2,7 +2,7 @@
 
 *AI‑powered workflow for turning existing literature into **new, cross‑domain insights**.*
 
-DeepFusion - <a href="https://github.com/user-attachments/assets/7be1d37d-8fd6-4ba0-89c3-2fdb4b5ca935/clip_2025-06-26_13-15-47.mp4" target="_blank" rel="noopener noreferrer">▶︎ Watch the demo</a>
+<https://github.com/user-attachments/assets/7be1d37d-8fd6-4ba0-89c3-2fdb4b5ca935>
 
 ---
 
